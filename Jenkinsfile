@@ -14,7 +14,7 @@ pipeline {
         //checkout the code
         stage('checkout from scm') {
             steps {
-                git branch: 'main', url: 'https://github.com/Kachi-Okorie/Java-Web-Build.git'
+                git branch: 'main', url: 'https://github.com/Harpy-Cloud/DevOps-Series.git'
             }
         }
         //compile every code in our project
@@ -73,7 +73,7 @@ pipeline {
                     script {
                         // withCredentials([usernameColonPassword(credentialsId: 'docker', variable: 'docker_password')])
                         withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'docker_password', usernameVariable: 'docker_name')]) {
-                            sh 'docker run -d --name g1 -p 8082:8080 kachio/gradleproject:latest'
+                            sh 'docker run -d --name g2 -p 8084:8080 kachio/test1'
                         }
                     }
                 }
