@@ -73,7 +73,7 @@ pipeline {
                     script {
                         // withCredentials([usernameColonPassword(credentialsId: 'docker', variable: 'docker_password')])
                         withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'docker_password', usernameVariable: 'docker_name')]) {
-                            sh 'docker run -d --name g2 -p 8084:8080 kachio/test1'
+                            sh 'docker run -d --name pizzaform -p 8082:8080 kachio/test1'
                         }
                     }
                 }
